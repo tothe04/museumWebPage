@@ -1,0 +1,74 @@
+ .container {
+     //display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-wrap: wrap;
+     text-align: center;
+     width: 55%;
+     margin-left: auto;
+     margin-right: auto;
+     height: 100%;
+ }
+
+ .exhibitImage {
+     width: 50%;
+     height: auto;
+ }
+
+ .break {
+     flex-basis: 100%;
+     height: 0;
+
+ }
+
+ table,
+ th,
+ td {
+     border: 1px solid black;
+ }
+
+ form {
+     width: 100%;
+     text-align: center;
+ }
+
+ .div-card {
+     padding: 50px;
+ }
+
+ mat-form-field {
+     width: 100%;
+ }
+
+ mat-card-content {
+     text-align: center;
+ }
+
+ mat-card {
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+ }
+
+ mat-card-header {
+     margin-left: auto;
+     margin-right: auto;
+     text-align: center;
+     justify-content: center;
+ }
+
+ mat-card-content {
+     width: 70%;
+     margin-left: auto;
+     margin-right: auto;
+     text-align: center;
+     justify-content: center;
+ }
+
+ .mat-card-content-wrapper {
+     flex: 1 1 50%;
+ }
+
+ mat-form-field {
+     width: 50%;
+ }

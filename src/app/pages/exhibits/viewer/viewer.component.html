@@ -1,0 +1,68 @@
+<div class="div-card" *ngIf="exhibitInput">
+    <mat-card>
+        <span class="mat-card-content-wrapper">
+            <mat-card-header>
+                <mat-card-title>{{exhibitInput.name}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <img class="exhibitImage" [src]="loadedExhibit" />
+                <div style="font-weight: bold;">{{exhibitInput.name}}</div>
+                <div class="break"></div>
+                <div>{{exhibitInput.info}}</div>
+                <div class="break"></div>
+                <div>Price: {{exhibitInput.price | priceFormat:'€'}}</div>
+                <div class="break"></div>
+                <div
+                    [ngStyle]="{'color': exhibitInput.available === 'available' ? 'green' : 'red', 'font-weight': 'bold'}">
+                    {{exhibitInput.available}}
+                </div>
+            </mat-card-content>
+        </span>
+
+        <div *ngIf="tickets.length" style="justify-content: center; margin-left: auto; margin-right: auto;">
+            <h2 style="text-align: center;">Your previously purchased tickets</h2>
+            <table style="margin-left: auto; margin-right: auto;">
+                <tr>
+                    <th>User</th>
+                    <th>Quantity</th>
+                    <th>Exhibit</th>
+                </tr>
+                <tr *ngFor="let ticket of tickets">
+                    <td>{{ticket.email}}</td>
+                    <td>{{ticket.quantity}}</td>
+                    <td>{{ticket.exhibitId}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <span class="mat-card-content-wrapper" *ngIf="exhibitInput.available==='available'">
+            <mat-card-actions>
+                <form [formGroup]="ticketsForm" (ngSubmit)="purchaseTicket()">
+                    <div>
+                        <mat-form-field>
+                            <mat-label for="email">Email:</mat-label>
+                            <input matInput type="text" id="email" formControlName="email" />
+                            <!-- <input type="text" id="email" [(ngModel)]="ticketObject['email']" /> -->
+                        </mat-form-field>
+                    </div>
+                    <div class="break"></div>
+                    <div>
+                        <mat-form-field>
+                            <mat-label for="quantity">Quantity:</mat-label>
+                            <input matInput type="number" id="quantity" formControlName="quantity" />
+                        </mat-form-field>
+                    </div>
+
+                    <div class="break"></div>
+                    <div>
+                        <button mat-raised-button color="primary" type="submit">Purchase</button>
+                    </div>
+                </form>
+            </mat-card-actions>
+        </span>
+
+    </mat-card>
+
+
+
+</div>

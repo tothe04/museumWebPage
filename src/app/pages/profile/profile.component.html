@@ -1,0 +1,48 @@
+<ng-content></ng-content>
+
+<div class="main_component div-flex" *ngIf="user">
+    <mat-card class="div-flex">
+
+        <mat-card-header>
+            <mat-icon>account_box</mat-icon>
+            <mat-card-title>Profile</mat-card-title>
+
+        </mat-card-header>
+
+        <mat-card-actions class="mat-card-content-wrapper">
+            <form [formGroup]="profileForm">
+                <div>
+                    <mat-form-field>
+                        <mat-label>First name: </mat-label>
+                        <input matInput readonly="" type="text" formControlName="name.firstname"
+                            value="{{ user.name.firstname }}" />
+                    </mat-form-field>
+                </div>
+                <div class="break"></div>
+                <div>
+                    <mat-form-field>
+                        <mat-label>Last name: </mat-label>
+                        <input matInput readonly type="text" formControlName="name.lastname"
+                            value="{{ user.name.lastname }}" />
+                    </mat-form-field>
+                </div>
+                <div class="break"></div>
+                <div>
+                    <mat-form-field>
+                        <mat-label>Email: </mat-label>
+                        <input matInput readonly value="{{ user.email }}" />
+                    </mat-form-field>
+                </div>
+                <div class="break"></div>
+                <div>
+                    <div class="buttons">
+                        <!-- <button mat-raised-button color="primary" type="submit">Save</button> -->
+                    </div>
+                    <div class="buttons">
+                        <button mat-raised-button color="primary" (click)="deleteProfile()">Delete</button>
+                    </div>
+                </div>
+            </form>
+        </mat-card-actions>
+    </mat-card>
+</div>

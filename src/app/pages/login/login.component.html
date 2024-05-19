@@ -1,0 +1,24 @@
+<span class="loading-indicator" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+</span>
+
+<div class="main_component">
+    <div class="div-flex">
+        <h1>Log in!</h1>
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <mat-form-field>
+                <mat-label for="email">Email: </mat-label>
+                <input matInput id="email" type="email" [formControl]="email" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="password">Password: </mat-label>
+                <input matInput id="password" type="password" [formControl]="password" />
+            </mat-form-field>
+            <div>
+                <span><button mat-raised-button color="primary" type="submit">Login</button></span>
+                <span><button mat-raised-button color="primary" [routerLink]="'/signup'">Signup</button></span>
+            </div>
+        </form>
+    </div>
+</div>

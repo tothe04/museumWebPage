@@ -1,0 +1,7 @@
+<div class="exhibitList">
+    <mat-form-field appearance="fill">
+        <mat-select (selectionChange)="reload()" [(ngModel)]="chosenExhibit">
+            <mat-option *ngFor="let obj of exhibitObjectInput" [value]="obj">{{obj.id}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

@@ -1,0 +1,49 @@
+mat-card {
+    width: 80%;
+    height: 80%;
+    align-self: center;
+}
+
+mat-card-header {
+    display: initial;
+}
+
+.div-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.main_component {
+    height: 100vh;
+    align-items: center;
+}
+
+span {
+    padding: 5px 5px;
+}
+
+mat-form-field {
+    width: 100%;
+    padding: 3px;
+}
+
+.buttons {
+    padding: 5px;
+}
+
+button {
+    width: 100px;
+}
+
+.mat-card-content-wrapper {
+    flex: 1 1 50%;
+}
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
